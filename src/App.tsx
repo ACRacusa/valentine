@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 
-export default function Page() {
+export default function App() {
+  const gifUrl = process.env.PUBLIC_URL + '/duck.gif';
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
   const yesButtonSize = noCount * 20 + 16;
@@ -35,14 +36,11 @@ export default function Page() {
       {yesPressed ? (
         <>
           <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" />
-          <div className="my-4 text-4xl font-bold">WOOOOOO!!! I love you baby!!! ;))</div>
+          <div className="my-4 text-4xl font-bold">WOOOOOO!!! I love you Baby!!! :*</div>
         </>
       ) : (
         <>
-          <img
-            className="h-[200px]"
-            src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif"
-          />
+          <img className="h-[200px]" src={gifUrl} />
           <h1 className="my-4 text-4xl">Will you be my Valentine?</h1>
           <div className="flex items-center">
             <button
